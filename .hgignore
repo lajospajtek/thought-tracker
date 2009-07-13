@@ -1,0 +1,13 @@
+\.hg
+\.class$
+\.jar$
+\.war$
+\.ear$
+\.classpath$
+\.project$
+\.settings$
+\.svn
+\.log
+bin
+target
+

@@ -1,0 +1,24 @@
+<project name="cso" default="compile">
+
+    <property name="src.dir" value="src"/>
+    <property name="classes.dir" value="classes"/>
+
+    <target name="prepare">
+        <mkdir dir="${classes.dir}"/>
+    </target>
+
+    <target name="clean">
+        <delete dir="${classes.dir}"/>
+    </target>
+
+    <target name="compile" depends="prepare">
+        <javac srcdir="${src.dir}" destdir="${classes.dir}" debug="on" target="1.6">
+            <include name="cso/**"/>
+        </javac>
+    </target>
+
+    <target name="run" depends="compile">
+        <java classname="cso.Main" classpath="${classes.dir}"/>
+    </target>
+
+</project>

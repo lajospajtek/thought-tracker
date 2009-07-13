@@ -1,0 +1,29 @@
+<project name="extended log4j property configurator" default="compile">
+
+    <property name="src.dir" value="src"/>
+    <property name="classes.dir" value="classes"/>
+
+    <path id="cp">
+        <fileset dir="lib" includes="**"/>
+    </path>
+
+    <target name="prepare">
+        <mkdir dir="${classes.dir}"/>
+    </target>
+
+    <target name="clean">
+        <delete dir="${classes.dir}"/>
+    </target>
+
+    <target name="compile" depends="prepare">
+        <javac srcdir="${src.dir}" destdir="${classes.dir}" debug="on" source="1.2" target="1.1">
+            <classpath refid="cp"/>
+            <include name="**"/>
+        </javac>
+    </target>
+
+    <target name="run" depends="compile">
+        <java classname="logrunner1.Main" classpath="${classes.dir}" classpathref="cp"/>
+    </target>
+
+</project>
