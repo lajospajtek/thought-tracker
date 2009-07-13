@@ -9,5 +9,6 @@
 \.svn
 \.log
 \.obj
+bin
 target
 
