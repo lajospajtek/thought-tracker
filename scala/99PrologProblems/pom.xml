@@ -2,59 +2,19 @@
 <project xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd' xmlns='http://maven.apache.org/POM/4.0.0'>
 
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>org.thought-tracker</groupId>
     <artifactId>99-prolog-problems</artifactId>
-
 	<version>1.0.0</version>
-	<name>99 prolog problems in scala</name>
 	<packaging>jar</packaging>
-
-    <properties>
-        <scala.version>2.7.5</scala.version>
-    </properties>
-
-
-	<build>
-		<plugins>
-            <plugin>
-            <groupId>org.scala-tools</groupId>
-            <artifactId>maven-scala-plugin</artifactId>
-            <version>2.10.1</version>
-            <executions>
-				<execution>
-					<goals>
-						<goal>compile</goal>
-						<goal>testCompile</goal>
-					</goals>
-				</execution>
-			</executions>
-            <configuration>
-				  <jvmArgs>
-					<jvmArg>-Xmx1024m</jvmArg>
-				  </jvmArgs>
-				  <args>
-					<arg>-deprecation</arg>
-					<arg>-Xno-varargs-conversion</arg>
-				  </args>
-				  <scalaVersion>${scala.version}</scalaVersion>
-            </configuration>
-	        </plugin>
-        </plugins>
-	</build>
+    
+    <parent>
+		<groupId>org.thought-tracker</groupId>
+		<artifactId>scala-builder-pom</artifactId>
+        <version>1.0.0</version>
+        <relativePath>../pom.xml</relativePath>
+	</parent>
 
 	<dependencies>
-        <dependency>
-            <groupId>org.scala-lang</groupId>
-            <artifactId>scala-library</artifactId>
-            <version>${scala.version}</version>
-        </dependency>
-		<dependency>
-			<groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.4</version>
-            <scope>test</scope>
-		</dependency>
     </dependencies>
 </project>
 
