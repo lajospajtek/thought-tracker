@@ -9,6 +9,10 @@
 \.svn
 \.log
 \.obj
+\.idea
+\.iml
+\.ipr
+\.iws
 bin
 target
 
