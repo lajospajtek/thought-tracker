@@ -1,0 +1,5 @@
+libapache2-mod-headers2 (1.0.0-1) etch; urgency=low
+
+  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+
+ -- Sorin Manolache <sorinm@gmail.com>  Wed, 07 Apr 2010 17:33:06 +0200

@@ -1,0 +1,28 @@
+Source: libapache2-mod-headers2
+Priority: extra
+Maintainer: Sorin Manolache <sorinm@gmail.com>
+Build-Depends: debhelper (>= 5), autotools-dev, autoconf, automake, libtool, libaprutil1-dev, libapr1-dev, apache2-threaded-dev (>= 2.2.9)
+Standards-Version: 3.7.2
+Section: web
+
+Package: libapache2-mod-headers2
+Section: web
+Architecture: any
+Depends: apache2.2-common, ${shlibs:Depends}, ${misc:Depends}
+Description: Extension to mod_headers
+ Works like mod_headers.
+ Adds the directive HeaderExt with the command copyedit.
+ Command syntax:
+ HeaderExt [always|onsuccess] copyedit header regex replacement [[!]env=var]
+ Semantics:
+ If the condition specified by [!]env=var exists and is false,
+ no action is taken.
+ Otherwise the output header 'header' is looked up in the output headers.
+ If found, the regex 'regex' is applied to the value of the header.
+ If the regex matches, a new header is added.
+ Its name is 'header' and its value is 'replacement'.
+ HeaderExt is executed after the Header directives of mod_header. 
+ Example:
+ HeaderExt copyedit Set-Cookie ^name=(.*)domain=[^;]+(.*) name=$1domain=.mydomain.com$2 !env=error
+ This command sets the cookie 'name' on the domain .mydomain.com
+ in addition to the domain on which it is initially set.
